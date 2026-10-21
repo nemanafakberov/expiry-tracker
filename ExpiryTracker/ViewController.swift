@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         products = store.load()
-        // Do any additional setup after loading the view.
+
     }
     
     @objc private func addTapped() {
