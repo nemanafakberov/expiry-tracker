@@ -33,7 +33,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     @objc private func addTapped() {
-        print("Нажали +")
+        let addVC = AddProductViewController()
+        let nav = UINavigationController(rootViewController: addVC)
+        present(nav, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
