@@ -15,6 +15,13 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Продукты"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addTapped)
+        )
+        
         view.addSubview(tableView)
         tableView.frame = view.bounds
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -23,6 +30,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         products = store.load()
         // Do any additional setup after loading the view.
+    }
+    
+    @objc private func addTapped() {
+        print("Нажали +")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
