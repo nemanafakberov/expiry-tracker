@@ -34,6 +34,14 @@ class ViewController: UIViewController, UITableViewDataSource {
         cell.textLabel?.text = products[indexPath.row].name
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            products.remove(at: indexPath.row)
+            store.save(products)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
 
 
 }
